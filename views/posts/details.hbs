@@ -1,0 +1,32 @@
+<h2>{{title}}</h2>
+
+
+
+{{content}}
+
+<br>
+<br>
+- by {{author.username}} ♥️
+
+{{#unless comments}}
+  <p>No comments yet!</p>
+{{/unless}}
+
+{{#each comments}}
+  <p><span><b>{{this.author.username}}:</b></span> {{this.content}}</p>
+{{/each}}
+<br>
+<br>
+
+<form action="/posts/{{_id}}/comment" method="POST">
+  <label for="comment-author-username">Your username:</label>
+  <input type="text" name="author" id="comment-author-username" />
+  <input type="text" name="postAuthor" id="post-author" value="{{author.username}}" hidden />
+  <textarea name="content" id="comment-content-input" cols="30" rows="2"></textarea>
+  <button type="submit">Comment</button>
+</form>
+
+
+<br>
+<br>
+<a href="/users/{{author._id}}/posts">See all {{author.username}}'s posts </a>
