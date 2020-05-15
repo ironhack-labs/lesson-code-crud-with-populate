@@ -17,8 +17,6 @@ router.get('/post-create', (req, res) => {
     .catch(err => console.log(`Err while displaying post input page: ${err}`));
 });
 
-// ---------------------------- 1 vvvvv ----------------------
-
 // ****************************************************************************************
 // POST route to submit the form to create a post
 // ****************************************************************************************
@@ -37,8 +35,6 @@ router.post('/post-create', (req, res) => {
     .catch(err => console.log(`Err while creating the post in the DB: ${err}`));
 });
 
-// ---------------------------- 2vvvvv ----------------------
-
 // ****************************************************************************************
 // GET route to display all the posts
 // ****************************************************************************************
@@ -53,7 +49,6 @@ router.get('/posts', (req, res) => {
     .catch(err => console.log(`Err while getting the posts from the DB: ${err}`));
 });
 
-// ---------------------------- 3vvvvv ----------------------
 // ****************************************************************************************
 // GET route for displaying the post details page
 // shows how to deep populate (populate the populated field)

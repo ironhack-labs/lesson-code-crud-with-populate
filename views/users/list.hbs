@@ -2,8 +2,8 @@
 
 <ul>
   {{#each users}}
-    <li> {{ this.username }}
-      {{!-- ------- vvvv --------------- --}}
+    <li>
+      {{ this.username }}
       <a href="/users/{{this._id}}/posts">Read posts</a>
     </li>
   {{/each}}
