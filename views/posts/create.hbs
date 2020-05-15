@@ -1,6 +1,6 @@
 <h2>Create a new post</h2>
 
-<form action="/posts" method="POST">
+<form action="/post-create" method="POST">
   <label for="title-input"> Title </label>
   <input type="text" name="title" id="title-input">
   <br>
@@ -9,7 +9,7 @@
   <textarea type="text" name="content" id="content-input"> </textarea>
   <br>
 
-  <label for="author-select"> Author </label>
+  <label for="author-select"> Created by </label>
   <select name="author" id="author-select">
     <option disable selected value=""></option>
     {{#each dbUsers}}

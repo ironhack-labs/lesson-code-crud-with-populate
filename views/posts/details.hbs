@@ -1,23 +1,21 @@
 <h2>{{title}}</h2>
-
-
-
-{{content}}
-
-<br>
-<br>
-- by {{author.username}} ♥️
+<div>
+  {{content}}
+  <br>
+  - by {{author.username}} ♥️
+</div>
 
 {{#unless comments}}
   <p>No comments yet!</p>
 {{/unless}}
 
 {{#each comments}}
-  <p><span><b>{{this.author.username}}:</b></span> {{this.content}}</p>
+  <p><b>{{this.author.username}}:</b> {{this.content}}</p>
 {{/each}}
-<br>
-<br>
 
+<hr>
+
+<h3>Add comment</h3>
 <form action="/posts/{{_id}}/comment" method="POST">
   <label for="comment-author-username">Your username:</label>
   <input type="text" name="author" id="comment-author-username" />
@@ -27,6 +25,5 @@
 </form>
 
 
-<br>
 <br>
 <a href="/users/{{author._id}}/posts">See all {{author.username}}'s posts </a>
